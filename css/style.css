@@ -24,12 +24,26 @@ h6 {
     margin:0;
 }
 
-.aside{
+.aside, .project{
     border-radius:10px;
     background-color:rgba(128, 128, 128, 0.2);
     padding:15px;
     margin:10px 0;
 }
+
+a {
+    color:darkgray;
+    font-weight:bold;
+}
+a:hover {
+    color:black
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+td, th {border:black 1px solid;}
 
 pre {
     font-family:consolas;
