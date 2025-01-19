@@ -314,7 +314,124 @@ td, th {border:black 1px solid;}</code></pre>
         <p>Use CSS to style the recipe book, using a mix of the simple selectors and colors that you've learned.</em><br>&mdash; Khan Academy</p>
         <p><a href="project-2-recipe-book.html" target="_blank">> Link to project page.</a></p>
     </div>
+    
+<h4>#### CSS text properties</h4>
+    <h5>##### CSS Zen Garden</h5>
+    <p><a href="https://www.csszengarden.com/">CSS Zen Garden</a></p>
+    <div class="aside">
+        <p>I'm not going to do the rest of these CSS exercises. I already know CSS well enough, and I want to get on with it.</p>
+    </div>
+    <div class=""project" id="project-3">
+    <p>Nah, I'm not going to do this. I've done enough CSS and HTML to know I can achieve this. The next session however covers CSS layouts, which is something I know I <em>can't</em> do, so I'm skipping ahead.</p></div>
+
+<h4>#### CSS layout</h4>
+    <h5>##### CSS grouping elements</h5>
+
+    <p>Now, using CSS to change the layout of the page. This is the part that's a total ballache. We can use existing tags to configure our layout, but sometimes we want to arrange groups or parts of these elements.</p>
+    <p>To do this, we must introduce two new HTML tags which we call <strong>grouping elements</strong>.</p>
+    <p>First, the <strong>&lt;span&gt;</strong> tag. This is used for grouping selections of text <em>within other tags</em>.
+    <br>Second, the <strong>&lt;div&gt;</strong> tag. This is used for grouping selections of <em>multiple tag groups</em>.</p>
+    <p>By assigning a class name to either of these tags, we can then selectively apply CSS styling by referring to the class.</p>
+    <p>Now. A new annoying thing to contend with. Two elements that exist in the cursed world of CSS: <strong>inline</strong> and <strong>block</strong>.</p>
+    <p>An <strong>inline</strong> element does not have a new line after it. If you have multiple of them, they'll all be on one line. Some tags that are inline elements by default are &lt;a&gt; and &lt;img&gt;.</p>
+    <p>A <strong>block</strong> element <em>does</em> have a line after it. For example, the &lt;h*&gt;, &lt;p&gt;, &lt;li&gt; tags always have a line break by default.</p>
+    <p>So, from looking at &lt;span&gt; and &lt;div&gt; we can see that &lt;span&gt; creates <strong>inline</strong> elements, while &lt;div&gt; creates <strong>block</strong> elements.</p>
+    <p>From such humble beginnings, the mighty &lt;div&gt; tag announces its presence, with only the slightest murmurings of its future dominance. Remember the mighty &lt;div&gt;.</p>
+
+    <h5>##### CSS width, height, and overflow</h5>
+
+    <p>When we use divs, it's often for the purpose of moving and resizing our elements as boxes. It takes a good eye to discern whether a page is layed out well, and the iron patience of a tired parent to fight with CSS to make it sit still.</p>
+    <p>First we can use the CSS element <strong>width</strong> to set an absolute width for our div element, or as a percentage of available width (as defined by surrounding elements and ultimately the device width). The text will wrap to fit the width of the box, thus also extending its height.</p>
+    <p>We can also constrain the <strong>height</strong>> of our div if we want, but by doing this we may cause an unsightly overflow, if the space is insufficient for the content.</p>
+    <p>We can control overflow rules with the CSS element <strong>overflow</strong>. By default, overflow is set to visible, which means the content will flow outside of the constraints of the div block.</p>
+    <p>There are other options for overflow, however. Such as <strong>hidden</strong>, which will make any text beyond the limits of the div invisible. However, this means anyone viewing the page can't read the rest of the content.</p>
+    <p>More ideally, we can set overflow to <strong>auto</strong>, which will allow the user to scroll within the div.</p>
+    <p>Knowing this though, remember that scroll bars are annoying and nobody likes them. So don't use them, unless you're in a very dire situation which requires you to commit such a heinous sin.</p>
+
+    <h5>##### CSS box model</h5>
+
+    <p>In the deepest darkness of Transylvania, there is a terrible manor on a terrible mountain, where lives Count &lt;div&gt;ula. As you descend into the catacombs of this cursed place, you uncover more terrifying depths and complexities lurking in the bowels of that deep mountain cavern. Brace yourself for the beast that guards the gates to the dungeon. You look up and witness the beast's three heads: margins, borders and padding.</p>
+    <p>Everything is a box. Headings are boxes, paragraphs are boxes, spans are boxes. Boxes in boxes. Some are big, some are small, yet they remain bound to their essential nature: boxes in boxes.</p>
+    <p>First, we face the first head: the <strong>margin</strong>. This is the transparent space around the box, separating it from other elements. We can set margin on all sides like so:</p>
+    <pre><code>div{margin:15px;}</code></pre>
+    <p>We can also define the margin per side, starting from the top and going clockwise, as so:</p>
+    <pre><code>div{margin:10px 15px 20px 5px}</code></pre>
+    <p>The above would set the top margin as 10px, right margin as 15px, bottom margin 20px, and left margin 5px.</p>
+    <pre><code>div{margin:10px 15px}</code></pre>
+    <p>Additionally, blank size definitions will default to the size of its opposing sides. In the above, the top and bottom margin will be 10px, while the left and right margins will be 15px.</p>
+    <pre><code>div{margin:auto}</code></pre>
+    <p>The above will use <strong>auto</strong> to define the appropriate margin width to center the box within the width of the screen, or width of parent container. "Boxes in boxes", speak the three heads. A deafening mantra that echoes the halls of &Count lt;div&gt;ula's Manor</p>
+    <p>You turn to the second head: the <strong>border</strong>. Within the <strong>border</strong> element, we can define thickness, style, and color. For a thin border, we can set thickness to <strong>1px</strong>. For a simple border, use <strong>solid</strong>. For color, select whatever. Maybe <strong>red</strong>.</p>
+    <p>We can also specify the border style per side. For example, if we want to have a specific top border, we can use <strong>border-top</strong> and define the thickness, style and width individually.</p>
+    <p>Here are some border styles:</p>
+    <ul>
+        <li>dotted - Defines a dotted border</li>
+        <li>dashed - Defines a dashed border</li>
+        <li>solid - Defines a solid border</li>
+        <li>double - Defines a double border</li>
+        <li>groove - Defines a 3D grooved border. The effect depends on the border-color value</li>
+        <li>ridge - Defines a 3D ridged border. The effect depends on the border-color value</li>
+        <li>inset - Defines a 3D inset border. The effect depends on the border-color value</li>
+        <li>outset - Defines a 3D outset border. The effect depends on the border-color value</li>
+        <li>none - Defines no border</li>
+        <li>hidden - Defines a hidden border</li>
+    </ul>
+    <p>As you look into the eyes of the <strong>border</strong>, you see the content push snug to the side of the box. Clarity is lost. You turn to seek the advice of the third head, <strong>padding</strong>. You notice hints of compassion in each of the heads' eyes. Are they not warning you not to proceed, or are they instead questioning the will of the adventurer to delve into Count &lt;div&gt;'s Manor? Perhaps they are not so scary. You look deep into the eyes of <strong>padding</strong> and reveal its secrets, unafraid.</p>
+    <p>Whenever a box has background colours or borders, padding should always be consulted to distinguish the content from the visible borders.</p>
+    <p>Now that you've looked in the eyes of each head, you recognise the lesson they teach. Sometimes an offer of compassion and guidance can seem like a looming threat. Feelings of powerlessness can foster fear of rejection, inhibiting our capability to accept the gifts offered. Is the beast really your enemy, or do you fear to trust in its lessons? Look into the eyes of the beast, and decide whether it is really so threatening.</p>
+    <p>The echo again. Boxes in boxes. Deeper into the caverns we go, to more threatening beasts.</p>
+
+    <h5>##### CSS Position</h5>
+    
+    <p>In the example piece, inline elements and block elements are displayed according to default CSS positioning strategy. We want to change this using the CSS <strong>position</strong> property.</p>
+    <p>For the first element, a landscape picture, position is set to <strong>relative</strong>. This tells the browser to display the element as it normally would, but then we will offset this. For example, we want to offset this 20px from the top, and 10px from the left. To do this we can add the following to the CSS style rules:</p>
+    <code><pre>img{
+    top: 20px;
+    left:10px;
+}</pre></code>
+    <p>Now, that's cool. It renders the image over other stuff now, offset from it's relative default position. However, we can do better, by changing relative to <strong>absolute</strong>.</p>
+    <p>First, by setting the position to absolute, this changes the position of the following elements inline with the image being changed, as the absolute positioning removes it from the relative positioning rules.</p>
+    <p>If we are setting out images with absolute positioning, we now have to contend with content being drawin over other content. We might not agree with the order. Content will be rendered in order of the HTML, so we can choose to change this. However, we can also change the positioning within the CSS using the <strong>z-index</strong> property.</p>
+    <p>An element with z-index 1 will be lower than an element with z-index 3. They stack like this.</p>
+    <p>Default z-index of elements will be 0</p>
+    <p>By scrolling the page, we can see an important aspect of absolute positioning: elements are ordered relative to the top left of the page.</p>
+    <p>However, maybe you want the position to remain? Maybe you want the header to be visible regardless of where you've scrolled on page. In this case, you want it to be <strong>fixed</strong>. The position of the element will remain the same regardless of where you are on the page. It is relative to the top of the viewing window, rather than the page itself.</p>
+
+    <h5>##### CSS floating elements</h5>
+    <p>Now, we're looking at float. Float is another beast. It is used for wrapping elements in and around other elements. In the case of this example in the course, we're going to use it to wrap text around an image.</p>
+    <pre><code>img {float:left;}
+    </code></pre>
+    <p>Generally when we try to float a &lt;div&gt; it attempts to take up all the space, so we should always assign a width.</p>
+    <p>In the case where a sidebar element as described above overlaps the footer, we can ensure that the footer element clear of the floating content on <strong>both</strong> left and right by using:</p>
+    <pre><code>footer {clear:both;}</code></pre>
+
+    <h5>##### Planning your webpage</h5>
+    <p>Going straight into HTML and CSS with no planning can lead to a lot of wasted time. Instead, you should figure out content, layout, and style beforehand.</p>
+    <p><strong>Brainstorming</strong></p>
+    <p>Brainstorming by using mind maps, jotting notes, utilising post-it notes. Collaborating with someone can help this process, weeding out dud ideas, catching blind-spots, etc. The Yes, And approach can help maintain forward momentum when brainstorming ideas. Once ideas have been generated, you can begin connecting the best ideas and scrutinising those that don't fit.</p>
+    <p><strong>Paper prototyping</strong></p>
+    <p>Prototyping your page on paper can be a faster way to iterate through ideas before getting caught up in the technical headaches of CSS. This can give you a version of your website to further scrutinise, and which to show to friends to test your design concept before going ahead with production.</p>
+    <p><strong>Wireframes</strong></p>
+    <p>A wireframe is the next level up from the paper prototype. A more precise digital sketch of your design concept to present to clients and collaborators that present the application in context.</p>
+    <p>Some popular tools for prototyping include:</p>
+    <ul>
+        <li>Figma</li>
+        <li>Balsamic</li>
+        <li>Powerpoint</li>
+        <li>Photoshop</li>
+        <li>Gimp</li>
+        <li>InDesign</li>
+    </ul>
+    <p>As this course is somewhat outdated, there are many more apps now to help with this, including interactive prototyping apps. Can't be arsed listing any here though.</p>
+    <div class="project" id="project-4">
+        <h5>Project: Event invite</h5>
+        <p><em>In this project, you'll make an event invite for an event- a party, a workshop, a wedding, whatever you want. It should have event title, details, and maybe it'd have a guest list or RSVP button.<br>
+        Before you start coding, I encourage you to "prototype" it - to plan it out either on paper or with a "prototyping" tool. Sketch out the vision you have in your head and go through a few prototypes until you're happy.
+        <br>Then, when you're ready, try to implement your event invite in HTML/CSS. If you get stuck on something that's hard to transfer from paper to HTML, try searching on the internet or clicking "Request Help." I bet you'll learn something from the process.</em><br>&mdash; Khan Academy</p>
+        <p><a href="project-4-event-invite.html" target="_blank">> Link to project page.</a></p>
+    </div>
 
 </article>
+
 </body>
 </html>
